@@ -1,0 +1,16 @@
+name = "tunnel-workers"
+main = "build/worker/shim.mjs"
+compatibility_date = "2025-07-28"
+
+[build]
+command = "cargo install -q worker-build && worker-build --release"
+
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+[vars]
+USER_ID = "e76281eb-a9ee-4152-bf35-b01c04f9de2b" # your uuid
+PROXY_IP = "" # proxyip.fxxk.dedyn.io
+FALLBACK_SITE = "" # https://httpbin.org/status/404
+SHOW_URI = "true" # show vless uri in /UUID path
